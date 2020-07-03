@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: deepskyblue;
+   
+}
+.container{
+     display:grid;
+    grid-row-gap: 60px;
+    font-family: 'Bebas Neue', cursive;
+    padding-top: 60px;
+   
+
+
+}
+.grid-item{
+    text-align: center;
+    font-size: 25px;
+}
+input{
+    border: none;
+    font-size: 25px;
+    border-radius: 7px;
+}
+.addbutton{
+    background-color: #9ACD32;
+    border-radius: 7px;
+    border: rebeccapurple;
+    border: solid;
+}
