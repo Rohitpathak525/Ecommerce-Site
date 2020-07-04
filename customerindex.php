@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="adminindex.css" type="text/css">
-    <title>Admin Index</title>
+    <link rel="stylesheet" href="customerindex.css" type="text/css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <title>Document</title>
 </head>
 <body>
 
@@ -15,27 +16,21 @@ if ($_POST["loginsuccess"] == 1)
 ?>
     <div class="container">
         <div class="tile1">
-            <h1>View Customers</h1>
+            <h1>Buy</h1>
         </div>
-
-            
-            <a class="tile2" href="productindex.php"><h1>Products</h1></a>
-
-        <div class="tile3">
+        <div class="tile2">
             <h1>View Orders</h1>
         </div>
-        <div class="tile4">
-            <h1>Add Admin</h1>
+        <div class="tile3">
+            <h1>Cart</h1>
         </div>
     </div>
 
-
-
-    <?php
+<?php
 }
 else
 {
-    header("Location: adminlogin.php");
+    header("Location: customerlogin.php");
 }
 
 

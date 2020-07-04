@@ -19,7 +19,7 @@
 <div class="name">
 <p>Toothpaste</p></div>
 <div class=btn>
-<form action="delet.php" method="post">
+<form action="delete.php" method="post">
 <input type="submit"  value="Delete">
 </form>
 </div>

@@ -1,0 +1,58 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    color: black;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #e0e0e0;
+    font-family: 'Bebas Neue', cursive;
+
+  
+}
+table{
+    margin-top: 140px;
+    font-size: 25px;
+    background-color: #ffcc80;
+    padding:60px 60px ;
+    
+}
+.loginbutton{
+   padding-left: 60px;
+ 
+}
+
+.email{
+    padding-bottom: 50px;
+    padding-left: 33px;
+}
+.emailinput{
+    padding-bottom: 50px;
+margin-left: 8px;
+    
+    
+}
+.password{
+    padding-bottom: 30px;
+}
+.passwordinput{
+    padding-left: 10px;
+    padding-bottom: 30px;
+}
+input{
+    font-size: 20px;
+    border: none;
+}
+.logininput{
+    background-color: #fffde7;
+    border-radius: 5px;
+    padding: 5px 5px;
+}
+input{
+    border-radius: 5px;
+    padding: 5px 5px;
+
+}

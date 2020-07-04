@@ -1,0 +1,52 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #e0e0e0;
+  font-family: 'Bebas Neue', cursive;
+    
+ 
+}
+.grid-container{
+  
+  margin-right: 300px;
+  margin-left: 300px;
+  margin-bottom: 50px;
+   display:grid;
+   grid-template-columns: auto auto;
+ grid-row-gap: 30px;
+ grid-column-gap: 0px;
+  font-family: 'Bebas Neue', cursive;
+  margin-top: 100px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+  background-color: #ffab91;
+  
+
+
+}
+.grid-item{
+  text-align: center;
+  font-size: 25px;
+}
+input{
+  border: none;
+  font-size: 25px;
+  border-radius: 50px;
+}
+.addbutton{
+  background-color: #9ACD32;
+  border-radius: 7px;
+  border: rebeccapurple;
+  border: solid;
+  padding: 5px 5px;
+}     
+.inventory{
+  align-items: center;
+
+  }
+  input{
+    padding: 5px 5px;
+  }

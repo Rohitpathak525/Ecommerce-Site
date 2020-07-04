@@ -1,0 +1,134 @@
+*{
+    /* outline: solid red 1px; */
+    margin: 0px;
+    padding: 0px;
+}
+body
+{
+    background-color:  #ffcc80;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+    font-family: 'Bebas Neue', cursive;
+    
+}
+
+
+.container{
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
+
+.table
+{
+    border: solid white 1px;
+    padding: 20px;
+}
+input{
+    border-radius: 5px;
+}
+select 
+{
+    width: 75%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color:  #e0e0e0;
+    transition: 0.5s;
+    cursor: pointer;
+    color: #121212;
+}
+
+
+input[type=submit] 
+{
+    width: 60%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #313131;
+    color: white;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+input[type=text] 
+{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #e0e0e0;
+    transition: 0.5s;
+    color: #121212;
+    
+}
+
+input[type=password] 
+{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #e0e0e0;
+    transition: 0.5s;
+    color: #121212;
+    
+}
+
+input[type=email] 
+{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #e0e0e0;
+    transition: 0.5s;
+    color: #121212;
+    
+}
+
+input[type=date] 
+{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    background-color: #e0e0e0;
+    transition: 0.5s;
+    color: #121212;
+    
+}
+
+
+input[type=submit]:hover
+{
+    background: #ff8a65;
+}
+td{
+    font-size: 20px;
+}
+input{
+    border-radius: 5px;
+}

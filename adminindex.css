@@ -14,21 +14,22 @@ body
 .container
 {
   display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-template-rows: 1fr;
+grid-template-columns: 1fr 1fr 1fr 1fr;
+grid-template-rows: 1fr 3fr;
 align-items: center;
 justify-items: center;
+width: 100vw;
 }
 
 .tile1
 {
-  grid-row: 1/2;
+  grid-row: 2/3;
   grid-column: 1/2;
     height: 400px;
-    width: 300px;
+    width: 20vw;
     background-color: #121212;
     border-color: white;
-    margin: 50px;
+    
     box-shadow: 5px 10px 18px 7px #b0bec5;
     border-radius: 10px;
     color: white;
@@ -40,13 +41,13 @@ justify-items: center;
   }
   .tile2
 {
-  grid-row: 1/2;
+  grid-row: 2/3;
   grid-column: 2/3;
     height: 400px;
-    width: 300px;
+    width: 20vw;
     background-color: #121212;
     border-color: white;
-    margin: 50px;
+    
     box-shadow: 5px 10px 18px 7px #b0bec5;
     border-radius: 10px;
     color: white;
@@ -58,13 +59,31 @@ justify-items: center;
   }
   .tile3
 {
-  grid-row: 1/2;
+  grid-row: 2/3;
   grid-column: 3/4;  
   height: 400px;
-    width: 300px;
+    width: 20vw;
     background-color: #121212;
     border-color: white;
-    margin: 50px;
+    
+    box-shadow: 5px 10px 18px 7px #b0bec5;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    float: left;
+    display: grid;
+    align-items: center;
+    justify-items: center;
+  }
+  .tile4
+{
+  grid-row: 2/3;
+  grid-column: 4/5;  
+  height: 400px;
+    width: 20vw;
+    background-color: #121212;
+    border-color: white;
+    
     box-shadow: 5px 10px 18px 7px #b0bec5;
     border-radius: 10px;
     color: white;
