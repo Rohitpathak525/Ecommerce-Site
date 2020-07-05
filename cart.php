@@ -1,9 +1,6 @@
 <?php
 
 
-
-
-
 if(isset($_GET["action"]))
 {
 
@@ -35,17 +32,6 @@ if(isset($_GET["action"]))
 
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 // connecting to database
