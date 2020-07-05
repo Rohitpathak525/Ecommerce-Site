@@ -97,12 +97,12 @@ if(isset($_GET["success"])) // no bootstrap here
 
 <?php
     
-if ($conn->connect_error)
-    die("Connection failed: " . $conn->connect_error);
+if ($con->connect_error)
+    die("Connection failed: " . $con->connect_error);
     else
     {
         $sql="SELECT * from products" ;
-        $r=mysqli_query($conn,$sql);
+        $r = mysqli_query($con,$sql);
 
         while($row = mysqli_fetch_assoc($r))
         {
@@ -143,7 +143,7 @@ if ($conn->connect_error)
 
        echo " <button> <a  href='cart.php' > Proceed to Cart </a></button>";
     }
-    mysqli_close($conn);
+    mysqli_close($con);
 
 ?>
 
