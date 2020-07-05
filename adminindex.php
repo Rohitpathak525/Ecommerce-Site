@@ -12,24 +12,23 @@
 if ($_POST["loginsuccess"] == 1)
 {
 
-?>
-    <div class="container">
-        <div class="tile1">
-            <h1>View Customers</h1>
+?> <div class="img">       
+
+<div class="grid-container">
+
+<div class="grid-item">
+<button>View Customers</h1></button></div>
+<div class="grid-item">
+<button ><a href="productindex.php">Products</a></button>
+</div>
+<div class="grid-item">
+<button>View Orders</button>
+</div>
+<div class="grid-item" href="addadmin.php">
+            <button>Add Admin</button>
         </div>
-
-            
-            <a class="tile2" href="productindex.php"><h1>Products</h1></a>
-
-        <div class="tile3">
-            <h1>View Orders</h1>
-        </div>
-        <div class="tile4">
-            <h1>Add Admin</h1>
-        </div>
-    </div>
-
-
+  
+</div>
 
     <?php
 }
