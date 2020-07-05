@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="adminviewproduct.css">
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
 
-    <title>Document</title>
+    <title>Admin View Product</title>
 </head>
 <body>
 <div class="card">

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="tracking-manager.css">
-    <title>Document</title>
+    <title>Tracking Manager</title>
 </head>
 <body>
 <table class="content-table">
