@@ -2,86 +2,42 @@
 {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
 }
-
-
-body
-{
-    background: #e0e0e0;
-    font-family: 'Bebas Neue', cursive;
+body{
+    background-color: #D3D3D3	;
 }
-
-
-.container
-{
-  display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-template-rows: 1fr;
-align-items: center;
-justify-items: center;
+.row{
+   margin-top: 100px;
 }
-
-.tile1
-{
-  grid-row: 1/2;
-  grid-column: 1/2;
+img{
+    width: 400px;
     height: 400px;
-    width: 300px;
-    background-color:#ffcc80 ;
-    /* border-color: white; */
-    margin: 50px;
-    /* box-shadow: 5px 10px 18px 7px #b0bec5; */
-    
-    color: #121212;
-    text-align: center;
-    float: left;
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    cursor: pointer;
-  }
-  .tile2
-{
-  grid-row: 1/2;
-  grid-column: 2/3;
-    height: 400px;
-    width: 300px;
-    background-color: #ffcc80;
-    /* border-color: white; */
-    margin: 50px;
-    /* box-shadow: 5px 10px 18px 7px #b0bec5; */
-    
-    color: #121212;
-    text-align: center;
-    float: left;
-    display: grid;
-    align-items: center;
-    justify-items: center;
-    cursor: pointer;
-  }
-  .tile3
-  {
-    grid-row: 1/2;
-    grid-column: 3/4;
-      height: 400px;
-      width: 300px;
-      background-color: #ffcc80;
-      /* border-color: white; */
-      margin: 50px;
-      /* box-shadow: 5px 10px 18px 7px #b0bec5; */
-      
-      color: #121212;
-      text-align: center;
-      float: left;
-      display: grid;
-      align-items: center;
-      justify-items: center;
-      cursor: pointer;
-    }
-    .productbutton{
-      border: none;
-      border-radius: 50px;
-      padding: 5px 5px;
-      background-color: #fffde7;
-    }
-   
+    margin-left: 80px;
+}
+.form1{
+ margin-top:40px;
+}
+.form2{
+    margin-top: 50px;
+}
+.form3{
+    margin-top: 50px;
+}
+.v1{
+    border-left: 6px solid;
+    position: absolute;
+    height:350px;
+left:50%
+}
+input{
+    background-color: transparent;
+    font-size: 30px;
+    border-radius: 8px;
+    padding: 7px 7px;
+}
+input:hover{
+    background-color: black;
+    color: whitesmoke;
+}
+
