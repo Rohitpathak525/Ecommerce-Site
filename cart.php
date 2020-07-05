@@ -1,4 +1,39 @@
 <?php
+
+
+if(isset($_GET["action"]))
+{
+
+ if($_GET["action"] == "clear")
+ {
+  setcookie("shoppingcart", "", time() - 3600, "/");
+  header("location:cart.php?clearall=1");
+ }
+
+ if($_GET["action"] == "delete")
+ {
+     $cookiedata = stripslashes($_COOKIE['shoppingcart']);
+     $cartdata = json_decode($cookiedata, true);
+     var_dump($cartdata);
+     foreach($cartdata as $key => $values)
+     {
+         if($cartdata[$key]['item_id'] == $_GET["id"])
+         {
+             unset($cartdata[$key]);
+             $item_data = json_encode($cartdata);
+             setcookie("shoppingcart", $item_data, time() + (86400 * 30), "/");
+             header("location:cart.php");
+         }
+     }
+     
+ }
+
+
+
+
+}
+
+
 // connecting to database
 $servername = "localhost";
 $username = "root";
@@ -7,6 +42,7 @@ $database = "bravostore";
 
 // create a connection
 $con = mysqli_connect($servername, $username, $password, $database);      
+
 
 ?>
 
@@ -29,7 +65,7 @@ $con = mysqli_connect($servername, $username, $password, $database);
     
   
  
-    <div class="container">
+    <div class="container mt-4">
       <div class="row justify-content-center">
         <div class="col-lg-11">
         <div class="table responsive mt-2">
@@ -42,52 +78,63 @@ $con = mysqli_connect($servername, $username, $password, $database);
                 </tr>
                 <tr>
                 <th>Name</th>
-                <th>Image</th>
                 <th>Quantity</th>
                 <th>Price</th>
-                <th>Tax</th>
+                <th>Base price</th>
                 <th>GST</th>
+                <th>Total amount</th>
                 <!-- get request  -->
-                <th><a onclick="return confirm('Are you sure you want to clear your cart? ')" href="action.php?clear=all" class="badge badge-danger"><i class="fa fa-trash"></i> Clear cart</a></th></tr>
+                <th><a onclick="return confirm('Are you sure you want to clear your cart? ')" href="cart.php?action=clear" class="badge badge-danger"><i class="fa fa-trash"></i> Clear cart</a></th></tr>
             </thead>
                 <tbody>
 
                 <?php 
-                // $id = $_GET['productid'];
-                $query = "SELECT * FROM `products`";
-                $result = mysqli_query($con, $query); 
-                // $result->num_rows>0
-                $total=0;    
-                while($row = mysqli_fetch_assoc($result)):
-                
-                  $productname = $row["productname"];
-                  $priceperunit = number_format($row["priceperunit"],2);
-                  $manufacturingdate = $row["manufacturingdate"];
-                  $inventoryquantity = $row["inventoryquantity"];
-                  $productimage = $row["productimage"];
-                  $id = $row["productid"];
+
+                if(isset($_COOKIE["shoppingcart"]))
+                {
                   
-                ?>
-                    <tr>
-                    <td><input type="text" class="form-control text-center" value="<?php echo $productname ?>"></td>
-                    <td><input type="text" class="form-control text-center" width="50" value="<?php echo $productimage ?>"></td>
-                    <td><input type="number" class="form-control text-center" min="1" value="<?php echo $inventoryquantity ?>"></td>
-                    <td><input type="text" class="form-control text-center" value="<?php echo $priceperunit ?>" disabled></td>
-                    <td><input type="text" class="form-control" id="gst" disabled></td>
-                    <td><input type="text" class="form-control" id="total" name="total" disabled></td>
-                    <td><a href="action.php?delete=<?php $id?>" class="text-danger"><i class="fa fa-trash"></i> </a></td>
-                   
-                    <?php endwhile;?>
+                  $total = 0;
+                  $gst = 0;
+                  $totalamount = 0;
+                  $cookiedata = stripslashes($_COOKIE['shoppingcart']);
+                  $cartdata = json_decode($cookiedata, true);
+                  foreach($cartdata as $keys => $values)
+                  {               
+                    $productname = $values["item_name"];
+                    $priceperunit = $values["item_price"];
+                    $buyquantity = $values["item_quantity"];
+                    $id = $values["item_id"];
+                    $total += $priceperunit*$buyquantity;
+                    $gst = 0.05;
+                    $totalamount = ($total) + ($total)*$gst;
+                    
+                  ?>
+                      <tr>
+                      <td><input type="text" class="form-control text-center" value="<?php echo $productname ;?>"></td>
+                      <td><input type="number" class="form-control text-center" min="1" value="<?php echo $buyquantity; ?>" disabled></td>
+                      <td><input type="text" class="form-control text-center" width=100px value="<?php echo $priceperunit ;?>" disabled></td>
+                      <td><input type="number" class="form-control text-center" min="1" value="<?php echo $total; ?>" disabled></td>
+                      <td><input type="number" class="form-control text-center" value=<?php echo $gst?> disabled></td>
+                      <td><input type="number" class="form-control text-center"  value="<?php echo $totalamount; ?>" disabled></td>
 
+                      <td><a href="cart.php?action=delete&id=<?php echo $id?>" class="text-danger"><i class="fa fa-trash"></i> </a></td>
+                    
+                      <!-- <//?php ?> -->
 
-                  <tr><td colspan="3"><a href="product.php" class="btn btn-success"><i class="fa fa-cart-plus"></i> Continue Shopping</a></td>
-                   <td colspan="2" class="mt-2">Amount to be paid</td>
-                   <td><i class="fa fa-rupee"></i> <?php echo number_format($total,2)?></td>
-                   <!-- go for payment  -->
-                   <td><a href="" class="btn btn-info"><i class="fa fa-credit-card"></i>Pay</a></td>
-                   </tr>
-                  </tr>
-                </tbody>
+              <?php }?>
+                    <tr><td colspan="6"><a href="customerviewproduct.php" class="btn btn-success"><i class="fa fa-cart-plus"></i> Continue Shopping</a></td>
+                    <!-- <td colspan="2" class="mt-2">Amount to be paid</td> -->
+                    <!-- <td><i class="fa fa-rupee"></i> <?php echo number_format($total,2)?></td> -->
+                    <!-- go for payment  -->
+                    <td><a href="" class="btn btn-info"><i class="fa fa-credit-card"></i>Pay</a></td>
+                    </tr>
+                    </tr>
+                  </tbody>
+            <?php }
+              else {
+                echo '<tr> <td colspan="5" align="center">No Item in Cart</td></tr>';
+               }
+            ?>
           </table>
         </div>
         </div>
