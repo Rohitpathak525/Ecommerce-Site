@@ -1,0 +1,41 @@
+*{
+    margin:0;
+  padding:0;
+  }
+  .card{
+    width: 25%;
+    background-color: skyblue;
+    border-radius: 5px;
+    box-shadow: 1px 1px 5px black;
+    font-family: 'Bebas Neue', cursive;
+  }
+  .card:hover{
+    box-shadow: 2px 2px 10px black;
+  }
+  img{
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+  }
+  .cost{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-size: 20px;
+  }
+  .name{
+    text-align: center;
+    font-size: 20px;
+  }
+  .btn{
+    text-align: center;
+    margin-top: 20px;
+    padding-bottom: 20px;
+    
+    }
+    input{
+      border-radius: 15px;
+      background-color: springgreen;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 20px;
+      padding:5px 10px
+    }
